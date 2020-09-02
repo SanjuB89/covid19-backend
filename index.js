@@ -8,6 +8,7 @@ const { response } = require("express");
 app.use(cors());
 app.use("/static", express.static("public"));
 
+//get file
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname + "/../index.html"));
 });
