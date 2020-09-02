@@ -31,6 +31,7 @@ app.get("/latest-status", (req, res) => {
 
 //getting latest update
 app.get("/country-date/:country", (req, res) => {
+  "Access-Control-Allow-Origin", req.headers.origin;
   const { country } = req.params;
   const { date } = req.query;
   const url = `https://covid19-api.org/api/status/${country}?date=${date}`;
