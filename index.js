@@ -6,7 +6,7 @@ const axios = require("axios");
 const { send } = require("process");
 const { response } = require("express");
 app.use(cors());
-app.use("/static", express.static("public"));
+//app.use("/static", express.static("public"));
 
 const PORT = process.env.PORT || 8000;
 
@@ -62,20 +62,6 @@ app.get("/difference-by-country/:country", (req, res) => {
 app.get("/timeline-by-country/:country", (req, res) => {
   const { country } = req.params;
   const url = `https://covid19-api.org/api/diff/${country}`;
-  axios
-    .get(url)
-    .then((response) => {
-      res.json(response.data);
-      //   console.log(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-});
-
-app.get("/timeline-by-country/:country", (req, res) => {
-  const { country } = req.params;
-  const url = `https://covid19-api.org/api/timeline/${country}`;
   axios
     .get(url)
     .then((response) => {
