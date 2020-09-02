@@ -30,7 +30,7 @@ app.get("/latest-status", (req, res) => {
 });
 
 //getting latest update
-app.get("/country-date:country", (req, res) => {
+app.get("/country-date/:country", (req, res) => {
   const { country } = req.params;
   const { date } = req.query;
   const url = `https://covid19-api.org/api/status/${country}?date=${date}`;
@@ -59,7 +59,7 @@ app.get("/difference-by-country/:country", (req, res) => {
     });
 });
 
-app.get("/time-by-country/:country", (req, res) => {
+app.get("/timeline-by-country/:country", (req, res) => {
   const { country } = req.params;
   const url = `https://covid19-api.org/api/diff/${country}`;
   axios
