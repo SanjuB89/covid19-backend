@@ -30,7 +30,7 @@ app.get("/latest-status", (req, res) => {
 });
 
 //getting latest update
-app.get("/country-date", (req, res) => {
+app.get("/country-date:country", (req, res) => {
   const { country } = req.params;
   const { date } = req.query;
   const url = `https://covid19-api.org/api/status/${country}?date=${date}`;
@@ -45,7 +45,7 @@ app.get("/country-date", (req, res) => {
     });
 });
 
-app.get("/difference-by-country", (req, res) => {
+app.get("/difference-by-country/:country", (req, res) => {
   const { country } = req.params;
   const url = `https://covid19-api.org/api/diff/${country}`;
   axios
@@ -59,7 +59,7 @@ app.get("/difference-by-country", (req, res) => {
     });
 });
 
-app.get("/time-by-country", (req, res) => {
+app.get("/time-by-country/:country", (req, res) => {
   const { country } = req.params;
   const url = `https://covid19-api.org/api/diff/${country}`;
   axios
@@ -73,7 +73,7 @@ app.get("/time-by-country", (req, res) => {
     });
 });
 
-app.get("/timeline-by-country", (req, res) => {
+app.get("/timeline-by-country/:country", (req, res) => {
   const { country } = req.params;
   const url = `https://covid19-api.org/api/timeline/${country}`;
   axios
@@ -87,7 +87,7 @@ app.get("/timeline-by-country", (req, res) => {
     });
 });
 
-app.get("/prediction-by-country", (req, res) => {
+app.get("/prediction-by-country/:country", (req, res) => {
   const { country } = req.params;
   const url = `https://covid19-api.org/api/prediction/${country}`;
   axios
