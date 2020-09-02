@@ -8,6 +8,8 @@ const { response } = require("express");
 app.use(cors());
 app.use("/static", express.static("public"));
 
+const PORT = process.env.PORT || 8000;
+
 //get file
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname + "/../index.html"));
@@ -28,6 +30,6 @@ app.get("/latest-status", (req, res) => {
 });
 
 //listening at port 8000
-app.listen(8000, () => {
+app.listen(PORT, () => {
   console.log("Listening at Port:8000");
 });
