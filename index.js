@@ -26,6 +26,7 @@ app.get("/latest-status", (req, res) => {
     });
 });
 
+//listening at port 8000
 app.listen(8000, () => {
   console.log("Listening at Port:8000");
 });
