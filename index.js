@@ -10,7 +10,7 @@ app.use(cors());
 
 const PORT = process.env.PORT || 8000;
 
-//get file
+//get file--couldnot get the contents
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname + "/../index.html"));
 });
@@ -22,7 +22,6 @@ app.get("/latest-status", (req, res) => {
     .get(url)
     .then((response) => {
       res.json(response.data);
-      //   console.log(response.data);
     })
     .catch((error) => {
       console.log(error);
@@ -39,7 +38,6 @@ app.get("/country-date/:country", (req, res) => {
     .get(url)
     .then((response) => {
       res.json(response.data);
-      //   console.log(response.data);
     })
     .catch((error) => {
       console.log(error);
@@ -53,7 +51,6 @@ app.get("/difference-by-country/:country", (req, res) => {
     .get(url)
     .then((response) => {
       res.json(response.data);
-      //   console.log(response.data);
     })
     .catch((error) => {
       console.log(error);
@@ -67,7 +64,6 @@ app.get("/timeline-by-country/:country", (req, res) => {
     .get(url)
     .then((response) => {
       res.json(response.data);
-      //   console.log(response.data);
     })
     .catch((error) => {
       console.log(error);
@@ -81,7 +77,6 @@ app.get("/prediction-by-country/:country", (req, res) => {
     .get(url)
     .then((response) => {
       res.json(response.data);
-      //   console.log(response.data);
     })
     .catch((error) => {
       console.log(error);
